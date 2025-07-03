@@ -2,8 +2,6 @@
 MITRE Discovery-T1046 Investigation Using Wireshark 
 
 ---
-
-```markdown
 # 🛡️ Wireshark Lab: MITRE ATT&CK – T1046 Network Service Discovery
 
 ## 🎯 Objective
@@ -67,12 +65,8 @@ These may indicate scanning, name resolution, or basic communications.
 - Sort by **Port**
 - IP `192.168.1.212` is scanning the following **20 ports**:
 
-```
-
 21, 22, 23, 25, 53, 80, 110, 111, 135, 139,
 143, 443, 445, 993, 995, 1723, 3306, 3389, 5900, 8080
-
-```
 
 ---
 
@@ -258,17 +252,11 @@ To reduce the risk of future reconnaissance or lateral movement within the envir
 
 ---
 
-```
-
----
-
 
 ## 📎 Notes
 
 - Ensure the time zone is always set to **UTC** in Wireshark.
 - Focus on **internal communications** when dealing with discovery tactics.
 - This lab is foundational for identifying malicious reconnaissance activity.
-
-```
 
 ---
