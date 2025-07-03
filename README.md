@@ -28,7 +28,7 @@ Scanning helps adversaries discover what ports/services are available, which fac
 
 ---
 
- ![SOC]()
+ ![SOC](image2.jpg)
 
 ## 🧪 Lab Instructions
 
@@ -39,7 +39,7 @@ Scanning helps adversaries discover what ports/services are available, which fac
   - **Last Packet**: `2024-02-02 14:40:43 (UTC)`
   - **Duration**: `6 seconds`
 
- ![SOC]()
+ ![SOC](Image3.jpg)
  
 > ℹ️ **Note:** Set your Wireshark Time Display Format to **UTC** for consistency across all labs.
 
@@ -52,7 +52,7 @@ Scanning helps adversaries discover what ports/services are available, which fac
   - **ARP**
   - **DNS**
 
- ![SOC]()
+ ![SOC](Image4.jpg)
  
 These may indicate scanning, name resolution, or basic communications.
 
@@ -64,9 +64,9 @@ These may indicate scanning, name resolution, or basic communications.
 - The top two IPs are **external** – not the main focus in the Discovery phase.
 - Focus instead on **internal traffic**, particularly from:
 - **192.168.1.212 → 192.168.1.101–104**
-![SOC]()
----
 
+---
+![SOC](Image5.jpg)
 ### 4. 🔌 Examine TCP Ports
 - Go to `Statistics > Conversations > TCP tab`
 - Sort by **Port**
@@ -86,30 +86,28 @@ These may indicate scanning, name resolution, or basic communications.
 - Open ports = Target sends **SYN/ACK** back to the scanning host.
 - The **destination IP** in those responses will be `192.168.1.212`.
 ---
- ![SOC]()
  
 ### 6. 🔎 Identify SYN/ACK Responses
 - Locate:
   - **First SYN Packet**: `Packet #11 @ 14:40:36`
   - **First SYN/ACK Response**: `Packet #26`
-
+ ![SOC](Image6.jpg)
 ---
 
- ![SOC]()
 
 ### 7. 🧪 Build Display Filter for SYN/ACK
 - Select the SYN/ACK packet (e.g., Packet #26)
 - Expand the **Transmission Control Protocol** field
 - Right-click **Flags (0x012 SYN, ACK)**:
   - `Prepare as Filter > Selected`
- ![SOC]()
+ ![SOC](Image7.jpg)
 ---
 
 ### 8. ➕ Add Destination IP to the Filter
 - Expand the **Internet Protocol** section
 - Right-click **Destination IP (192.168.1.212)**:
   - `Prepare as Filter > ...and Selected`
- ![SOC]()
+ ![SOC](Image8.jpg)
 ---
 
 ### 9. 🧹 Apply and Review Filtered Results
@@ -118,7 +116,7 @@ These may indicate scanning, name resolution, or basic communications.
 - Sort by **Source IP** to identify:
   - Which IPs responded
   - Which ports were open on each
- ![SOC]()
+ ![SOC](Image9.jpg)
 ---
 
 ## ✅ Summary
