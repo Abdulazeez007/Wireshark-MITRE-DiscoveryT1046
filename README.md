@@ -1,6 +1,5 @@
 # Wireshark-MITRE-DiscoveryT1046
 MITRE Discovery-T1046 Investigation Using Wireshark 
-
 ---
 # 🛡️ Wireshark Lab: MITRE ATT&CK – T1046 Network Service Discovery
 
@@ -9,6 +8,8 @@ MITRE Discovery-T1046 Investigation Using Wireshark
 Understand how to identify and analyze network scanning behavior using Wireshark based on MITRE ATT&CK technique **T1046 – Network Service Discovery**.
 
 ---
+
+ ![SOC]()
 
 ## 🔍 Overview
 
@@ -27,6 +28,8 @@ Scanning helps adversaries discover what ports/services are available, which fac
 
 ---
 
+ ![SOC]()
+
 ## 🧪 Lab Instructions
 
 ### 1. 📂 Open the PCAP File
@@ -36,6 +39,8 @@ Scanning helps adversaries discover what ports/services are available, which fac
   - **Last Packet**: `2024-02-02 14:40:43 (UTC)`
   - **Duration**: `6 seconds`
 
+ ![SOC]()
+ 
 > ℹ️ **Note:** Set your Wireshark Time Display Format to **UTC** for consistency across all labs.
 
 ---
@@ -47,6 +52,8 @@ Scanning helps adversaries discover what ports/services are available, which fac
   - **ARP**
   - **DNS**
 
+ ![SOC]()
+ 
 These may indicate scanning, name resolution, or basic communications.
 
 ---
@@ -56,8 +63,8 @@ These may indicate scanning, name resolution, or basic communications.
 - Sort by **Bytes** (descending)
 - The top two IPs are **external** – not the main focus in the Discovery phase.
 - Focus instead on **internal traffic**, particularly from:
-  - **192.168.1.212 → 192.168.1.101–104**
-
+- **192.168.1.212 → 192.168.1.101–104**
+![SOC]()
 ---
 
 ### 4. 🔌 Examine TCP Ports
@@ -78,9 +85,9 @@ These may indicate scanning, name resolution, or basic communications.
 **Important:** 
 - Open ports = Target sends **SYN/ACK** back to the scanning host.
 - The **destination IP** in those responses will be `192.168.1.212`.
-
 ---
-
+ ![SOC]()
+ 
 ### 6. 🔎 Identify SYN/ACK Responses
 - Locate:
   - **First SYN Packet**: `Packet #11 @ 14:40:36`
@@ -88,19 +95,21 @@ These may indicate scanning, name resolution, or basic communications.
 
 ---
 
+ ![SOC]()
+
 ### 7. 🧪 Build Display Filter for SYN/ACK
 - Select the SYN/ACK packet (e.g., Packet #26)
 - Expand the **Transmission Control Protocol** field
 - Right-click **Flags (0x012 SYN, ACK)**:
   - `Prepare as Filter > Selected`
-
+ ![SOC]()
 ---
 
 ### 8. ➕ Add Destination IP to the Filter
 - Expand the **Internet Protocol** section
 - Right-click **Destination IP (192.168.1.212)**:
   - `Prepare as Filter > ...and Selected`
-
+ ![SOC]()
 ---
 
 ### 9. 🧹 Apply and Review Filtered Results
@@ -109,7 +118,7 @@ These may indicate scanning, name resolution, or basic communications.
 - Sort by **Source IP** to identify:
   - Which IPs responded
   - Which ports were open on each
-
+ ![SOC]()
 ---
 
 ## ✅ Summary
