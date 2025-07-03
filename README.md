@@ -121,11 +121,6 @@ Port scanning is a critical initial step in the attack chain, enabling adversari
 Understanding the TCP handshake and visualizing traffic patterns is crucial for detecting adversarial reconnaissance in real-time.*
 
 ---
-Here's the updated **Markdown lab guide**, now with a **Mitigation Steps** section added professionally at the end to respond to the findings from the Wireshark investigation of **MITRE ATT\&CK T1046 – Network Service Discovery**:
-
----
-
-```markdown
 # 🧾 Wireshark Lab: T1046 Network Discovery – Investigation Findings & Mitigation
 
 ## 🔍 Post-Investigation Results
