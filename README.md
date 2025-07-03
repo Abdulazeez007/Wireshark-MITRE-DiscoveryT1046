@@ -9,7 +9,7 @@ Understand how to identify and analyze network scanning behavior using Wireshark
 
 ---
 
- ![SOC]()
+ ![SOC](image1.jpg)
 
 ## 🔍 Overview
 
